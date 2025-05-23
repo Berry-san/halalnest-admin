@@ -41,15 +41,22 @@ const ReportedIssues = () => {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <section className="grid grid-cols-1 gap-5 mt-4 lg:grid-cols-3 2xl:grid-cols-4">
+        <section className="flex flex-col space-y-4">
           {filteredIssues.map((issue, index) => (
             <div key={index} className="">
-              <div className="h-56 p-4 mb-4 overflow-auto bg-gray-200 border">
-                <p>{issue.username}</p>
-                <p>{issue.email}</p>
-                <p>Subject : {issue.SUBJECT}</p>
-                <p>Message : {issue.message}</p>
-                <p>{formatDate(issue.time_in)}</p>
+              <div className="p-4 mb-4 overflow-auto border-b border-black">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex flex-col">
+                    <p className="text-lg font-bold">
+                      {issue.username}{' '}
+                      <span className="font-light">({issue.email})</span>
+                    </p>
+                  </div>
+                  <p>{formatDate(issue.time_in)}</p>
+                </div>
+
+                <p className="uppercase">{issue.SUBJECT}</p>
+                <p>{issue.message}</p>
               </div>
             </div>
           ))}
