@@ -3,7 +3,7 @@ import { useState } from 'react'
 import SearchBar from '../components/molecules/SearchBar'
 import Modal from '../components/molecules/Modal'
 import deleteIcon from '../assets/icons/deleteIcon.svg'
-import editIcon from '../assets/icons/editIcon.svg'
+// import editIcon from '../assets/icons/editIcon.svg'
 // import AddSchool from '../components/organisms/AddSchool'
 // import EditSchool from '../components/organisms/EditSchool'
 import SchoolCard from '../components/molecules/SchoolCard'
@@ -82,7 +82,7 @@ const Schools = () => {
                     className="w-6 h-6"
                   />
                 </button>
-                <button
+                {/* <button
                   // onClick={() => {
                   //   setSchoolToEdit(school)
                   //   setShowEditModal(true)
@@ -90,7 +90,7 @@ const Schools = () => {
                   className="p-2 bg-white rounded-full"
                 >
                   <img src={editIcon} alt="Edit school" className="w-6 h-6" />
-                </button>
+                </button> */}
               </div>
             </div>
           ))}
