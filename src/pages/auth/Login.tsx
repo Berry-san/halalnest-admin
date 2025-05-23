@@ -4,6 +4,7 @@ import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useFormik } from 'formik'
 import { useAdminLogin } from '../../hooks/useAdmin'
+import useAuthStore from '../../store/authStore'
 
 interface LoginValues {
   emailAddress: string
@@ -13,6 +14,7 @@ interface LoginValues {
 const Login: React.FC = () => {
   const navigate = useNavigate()
   const [showPassword, setShowPassword] = useState(false)
+  const { login } = useAuthStore()
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword)
@@ -26,8 +28,6 @@ const Login: React.FC = () => {
       password: '',
     },
     onSubmit: async () => {
-      navigate('/')
-
       adminLogin(
         {
           email: loginValue.values.emailAddress,
@@ -35,8 +35,9 @@ const Login: React.FC = () => {
         },
         {
           onSuccess: () => {
+            login({ isAuthenticated: true })
             toast.success('Login successful')
-            navigate('/')
+            navigate('/dashboard')
           },
           onError: (error: unknown) => {
             console.error(error)

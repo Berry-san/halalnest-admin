@@ -34,11 +34,12 @@ export const schoolService = {
     }
   },
 
-  async addSchool(schoolData: School): Promise<void> {
+  // async addSchool(schoolData: AddSchool): Promise<void> {
+  async addSchool(formData: FormData): Promise<void> {
     try {
       const response = await apiBase.post(
         '/list_of_school/add_list_of_school',
-        schoolData
+        formData
       )
       return response.data.schools
     } catch (error) {

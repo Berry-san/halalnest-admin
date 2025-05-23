@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Button from '../components/atoms/Button'
+// import Button from '../components/atoms/Button'
 import SearchBar from '../components/molecules/SearchBar'
 import Modal from '../components/molecules/Modal'
 import deleteIcon from '../assets/icons/deleteIcon.svg'
@@ -15,10 +15,10 @@ const Schools = () => {
   const deleteSchoolMutation = useDeleteSchool()
 
   const [searchTerm, setSearchTerm] = useState('')
-  const [showUploadModal, setShowUploadModal] = useState(false)
-  const [showEditModal, setShowEditModal] = useState(false)
+  // const [showUploadModal, setShowUploadModal] = useState(false)
+  // const [showEditModal, setShowEditModal] = useState(false)
   const [showDeleteModal, setShowDeleteModal] = useState(false)
-  const [schoolToEdit, setSchoolToEdit] = useState<School | null>(null)
+  // const [schoolToEdit, setSchoolToEdit] = useState<School | null>(null)
   const [schoolToDelete, setSchoolToDelete] = useState<School | null>(null)
 
   const filteredSchools = schools
@@ -54,7 +54,7 @@ const Schools = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <Button text="Add School" onClick={() => setShowUploadModal(true)} />
+          {/* <Button text="Add School" onClick={() => setShowUploadModal(true)} /> */}
         </div>
 
         <section className="grid grid-cols-1 gap-5 lg:grid-cols-3 2xl:grid-cols-4">
@@ -83,10 +83,10 @@ const Schools = () => {
                   />
                 </button>
                 <button
-                  onClick={() => {
-                    setSchoolToEdit(school)
-                    setShowEditModal(true)
-                  }}
+                  // onClick={() => {
+                  //   setSchoolToEdit(school)
+                  //   setShowEditModal(true)
+                  // }}
                   className="p-2 bg-white rounded-full"
                 >
                   <img src={editIcon} alt="Edit school" className="w-6 h-6" />

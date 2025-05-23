@@ -218,3 +218,21 @@ export interface Business {
   business_category: string
   image: { image1: string; image2?: string }
 }
+
+export interface ReportIssue {
+  email: string
+  username: string
+  SUBJECT: string
+  message: string
+  time_in: string
+}
+
+export interface AddSchool {
+  school_name: string
+  halal_id: string
+  halal_nest_item_id: string
+  location: string
+  min_tutorial_fee: string
+  max_tutorial_fee: string
+  living_facility: string
+}

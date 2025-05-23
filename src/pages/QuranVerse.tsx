@@ -25,7 +25,7 @@ interface Quote {
 }
 
 const QuranVerse: React.FC = () => {
-  const { data: quotes, isLoading, isError } = useQuotes()
+  const { data: quotes, isLoading } = useQuotes()
   const addQuoteMutation = useAddQuote()
   const updateQuoteMutation = useUpdateQuote()
   const deleteQuoteMutation = useDeleteQuote()
