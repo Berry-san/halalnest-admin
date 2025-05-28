@@ -39,7 +39,12 @@ export const schoolService = {
     try {
       const response = await apiBase.post(
         '/list_of_school/add_list_of_school',
-        formData
+        formData,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        }
       )
       return response.data.schools
     } catch (error) {

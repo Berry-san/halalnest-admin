@@ -26,7 +26,11 @@ export const mosqueService = {
 
   async addMosque(formData: FormData): Promise<void> {
     try {
-      const response = await apiBase.post('mosque/add_mosque', formData)
+      const response = await apiBase.post('mosque/add_mosque', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      })
       return response.data.mosque
     } catch (error) {
       console.error('Error fetching products list:', error)
